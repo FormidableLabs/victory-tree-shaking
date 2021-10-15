@@ -1,6 +1,7 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import license from "rollup-plugin-license";
+import { visualizer } from "rollup-plugin-visualizer";
 import path from "path";
 
 export default {
@@ -18,7 +19,7 @@ export default {
       thirdParty: {
         includePrivate: true, // Default is false.
         output: {
-          file: path.join(__dirname, 'dist', 'main-rollup.dependencies.txt'),
+          file: "dist/main-rollup.dependencies.txt",
 
           // Lodash template that can be defined to customize report output
           template: `
@@ -28,6 +29,9 @@ export default {
           `.split("\n").map((l) => l.trim()).join("\n")
         },
       },
+    }),
+    visualizer({
+      filename: "dist/main-rollup.stats.html"
     })
   ]
 };

@@ -200,3 +200,8 @@ $ cat dist/main.js | egrep '(  \!\*\*\* |(CONCATENATED|EXTERNAL) MODULE)' | grep
 ```
 
 ... and all in all, it looks like we're _just_ getting the `victory-animation` (and transitive import of `victory-util`) that we specified without anything else.
+
+
+## Maintenance Status
+
+**Archived:** This project is no longer maintained by Formidable. We are no longer responding to issues or pull requests unless they relate to security concerns. We encourage interested developers to fork this project and make it their own!
